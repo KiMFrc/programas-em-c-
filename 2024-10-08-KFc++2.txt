@@ -1,0 +1,76 @@
+#include <iostream>
+#include <fstream> 
+
+
+
+// Para manipular arquivos
+
+using namespace std;
+ 
+int main() {
+
+
+// Mensagem 
+
+    cout << "Olá Mundo!" << endl;
+ 
+  
+
+
+// Tamanhos dos tipos de dados
+
+
+size_t tamanho_char = sizeof(char);
+size_t tamanho_short = sizeof(short);
+size_t tamanho_int = sizeof(int);
+size_t tamanho_long = sizeof(long);
+size_t tamanho_long_long = sizeof(longlong);
+size_t tamanho_float = sizeof(float);
+size_t tamanho_double = sizeof(double);
+size_t tamanho_long_double = sizeof(longdouble);
+
+
+
+ 
+// Mostrar os tamanhos dos tipos de dados
+
+    cout << "Tamanho de char: " << tamanho_char << " bytes" << endl;
+    cout << "Tamanho de short: " << tamanho_short << " bytes" << endl;
+    cout << "Tamanho de int: " << tamanho_int << " bytes" << endl;
+    cout << "Tamanho de long: " << tamanho_long << " bytes" << endl;
+    cout << "Tamanho de long long: " << tamanho_long_long << " bytes" << endl;
+    cout << "Tamanho de float: " << tamanho_float << " bytes" << endl;
+    cout << "Tamanho de double: " << tamanho_double << " bytes" << endl;
+    cout << "Tamanho de long double: " << tamanho_long_double << " bytes" << endl;
+
+
+
+ 
+// Gravar os resultados num arquivo de texto
+
+ofstream arquivo("tamanhos_tipos_dados.txt");
+   if (arquivo.is_open()) {
+
+        arquivo << "Olá Mundo!\n\n";
+        arquivo << "Tamanho de char: " << tamanho_char << " bytes\n";
+        arquivo << "Tamanho de short: " << tamanho_short << " bytes\n";
+        arquivo << "Tamanho de int: " << tamanho_int << " bytes\n";
+        arquivo << "Tamanho de long: " << tamanho_long << " bytes\n";
+        arquivo << "Tamanho de long long: " << tamanho_long_long << " bytes\n";
+        arquivo << "Tamanho de float: " << tamanho_float << " bytes\n";
+        arquivo << "Tamanho de double: " << tamanho_double << " bytes\n";
+        arquivo << "Tamanho de long double: " << tamanho_long_double << " bytes\n";
+        arquivo.close();
+
+        cout << "Resultados gravados em 'tamanhos_tipos_dados.txt' com sucesso!" << endl;
+
+    } else {
+
+        cout << "Erro ao abrir o arquivo!" << endl;
+
+    }
+ 
+    return 0;
+
+}
+  

@@ -1,0 +1,82 @@
+#include <iostream>
+#include <fstream> 
+
+
+// Para manipular arquivos
+
+using namespace std;
+ 
+int main() {
+int horas, minutos, segundos, total_segundos;
+ 
+    
+
+// Leitura e validação das horas
+
+    cout << "Insira as horas (1 a 23): ";
+    cin >> horas;
+        while (horas < 1 || horas > 23) {
+           cout << "Horas inválidas. Insira um valor entre 1 e 23: ";
+           cin >> horas;
+
+    }
+
+
+ 
+// Leitura e validação dos minutos
+
+    cout << "Insira os minutos (0 a 59): ";
+    cin >> minutos;
+        while (minutos < 0 || minutos >= 60) {
+            cout << "Minutos inválidos. Insira um valor entre 0 e 59: ";
+            cin >> minutos;
+
+    }
+
+
+ 
+// Leitura e validação dos segundos
+
+    cout << "Insira os segundos (0 a 59): ";
+    cin >> segundos;
+        while (segundos < 0 || segundos >= 60) {
+          cout << "Segundos inválidos. Insira um valor entre 0 e 59: ";
+          cin >> segundos;
+
+    }
+ 
+
+
+
+// Cálculo do total de segundos desde 00:00h
+
+    total_segundos = horas * 3600 + minutos * 60 + segundos;
+ 
+    
+
+
+// Mostrar o total de segundos
+
+    cout << "Total de segundos desde o início do dia: " << total_segundos << endl;
+
+
+
+
+ 
+// Gravar o resultado num arquivo de texto
+
+ofstream arquivo("total_segundos.txt");
+   if (arquivo.is_open()) {
+       arquivo << "Total de segundos desde o início do dia: " << total_segundos << endl;
+       arquivo.close();
+       cout << "Resultado gravado em 'total_segundos.txt' com sucesso!" << endl;
+
+    } else {
+       cout << "Erro ao abrir o arquivo!" << endl;
+
+    }
+ 
+    return 0;
+
+}
+ 
