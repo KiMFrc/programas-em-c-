@@ -1,0 +1,56 @@
+#include <iostream>
+#include <fstream>
+
+
+// Para manipular arquivos
+
+using namespace std;
+
+
+int main(int argc, char *argv[]) {
+
+
+// argc: número de argumentos
+// argv: array de strings com argumentos
+
+
+
+
+// Verifica se há argumentos fornecidos
+
+if (argc > 1) {
+        cout << "Número de argumentos: " << argc << endl;
+        cout << "Lista de argumentos:" << endl;
+
+       
+
+// Abrir arquivo para gravar os argumentos
+
+ofstream arquivo("argumentos.txt");
+        if (arquivo.is_open()) {
+
+
+
+
+// Itera sobre os argumentos
+
+for (int i = 0; i < argc; i++) {
+     cout << "Argumento " << i << ": " << argv[i] << endl;
+     arquivo << "Argumento " << i << ": " << argv[i] << endl;
+            }    
+
+  arquivo.close();
+      cout << "Argumentos gravados em 'argumentos.txt' com sucesso!" << endl;
+
+        } else {
+
+            cout << "Erro ao abrir o arquivo!" << endl;
+        }
+
+
+        } else {
+             cout << "Nenhum argumento fornecido." << endl;
+    }
+
+    return 0;
+}
